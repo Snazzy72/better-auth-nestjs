@@ -21,6 +21,7 @@ export class BetterAuthService {
       },
       (auth) => {
         this.auth = auth;
+        console.log(this.auth)
       },
     );
   }
