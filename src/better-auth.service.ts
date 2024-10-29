@@ -14,10 +14,7 @@ export class BetterAuthService {
         database: new Pool({
           connectionString: process.env.DB_URL,
         }),
-        trustedOrigins: ['*'],
-        advanced: {
-          disableCSRFCheck: true,
-        },
+        //other options...
       },
       (auth) => {
         this.auth = auth;
