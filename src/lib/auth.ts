@@ -18,16 +18,12 @@ export async function toNestJsController(
   request: Request,
   response: Response,
 ) {
-  if (!authService.auth) {
-    throw new Error('No better-auth service instance');
-  }
-
   const { toNodeHandler } = await import('better-auth/node');
 
   try {
     const authHandler = toNodeHandler(authService.auth);
     return authHandler(request as any, response as any);
-  } catch {
-    throw new Error('better-auth handler failed');
+  } catch(error) {
+    console.log(error)
   }
 }
