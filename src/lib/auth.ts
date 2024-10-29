@@ -5,8 +5,8 @@ export function createBetterAuthService(
   options: BetterAuthOptions,
   callback: (auth: any) => void,
 ) {
-  import('better-auth').then((betterAuth) => {
-    const auth = betterAuth.betterAuth({
+  import('better-auth').then((authInstance) => {
+    const auth = authInstance.betterAuth({
       ...options,
     });
     callback(auth);
